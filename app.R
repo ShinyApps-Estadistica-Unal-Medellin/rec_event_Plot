@@ -1,7 +1,8 @@
 # CARGA DE PAQUETES
 if(!require(pacman)) install.packages("pacman")
-if(!require(RSplida)) install.packages("RSplida.zip")
-pacman::p_load("shiny","rintrojs","gt")#,"readxl","RSplida","tidyverse"
+if(!require(devtools)) install.packages("devtools")
+if(!require(SMRD)) devtools::install_github("Auburngrads/SMRD")
+pacman::p_load("shiny","rintrojs","gt","SMRD","readxl")
 
 # CARGA DE BASES PRECARGADAS (.RData)
 carpeta <- "datos"
@@ -161,7 +162,7 @@ server <- function(input, output, session) {
   rdu1 <- reactive({
     req(datos1(), input$col_id1, input$col_time1)
     col_event <- if (input$col_event1 != "No aplica") input$col_event1 else NULL
-    RSplida::frame.to.rdu(datos1(), ID.column = input$col_id1,
+    frame.to.rdu(datos1(), ID.column = input$col_id1,
                           time.column = input$col_time1,
                           event.column = col_event,
                           data.title = {input$base_datos1 %||% input$file1$name})
@@ -170,7 +171,7 @@ server <- function(input, output, session) {
   # Gráfico MCF
   output$mcf_plot <- renderPlot({
     req(rdu1())
-    RSplida::event.plot(rdu1())
+    event.plot(rdu1())
   })
   
   # Resumen del RDU
