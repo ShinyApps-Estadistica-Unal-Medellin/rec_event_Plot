@@ -16,11 +16,11 @@ ui <- fluidPage(
   introjsUI(),  # Necesario para el tutorial
   
   tags$div(
-    style = "display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px; margin-bottom: 10px;",
+    style = "display: flex; justify-content: center; align-items: center; gap: 5px; margin-top: 5px; margin-bottom: 5px;",
     tags$img(src = "logo3.png", height = "100px", alt = "Logo UNAL"),
     tags$h2("Gráfico de Eventos Recurrentes", style = "margin: 0; font-weight: bold;")
   ),
-  tags$hr(style = "margin-bottom: 20px;"),
+  tags$hr(style = "margin-bottom: 10px;"),
   
   
   sidebarLayout(
