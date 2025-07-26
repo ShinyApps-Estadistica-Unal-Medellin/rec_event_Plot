@@ -2,7 +2,7 @@
 if(!require(pacman)) install.packages("pacman")
 if(!require(devtools)) install.packages("devtools")
 if(!require(SMRD)) devtools::install_github("Auburngrads/SMRD")
-pacman::p_load("shiny","rintrojs","gt","SMRD","readxl")
+pacman::p_load("shiny","rintrojs","gt","SMRD","readxl","httpuv")
 
 # CARGA DE BASES PRECARGADAS (.RData)
 carpeta <- "datos"
@@ -48,10 +48,6 @@ ui <- fluidPage(
         tags$li(tags$a(href="mailto:marjaramillogo@unal.edu.co", "Maria F. Jaramillo-Gómez")),
         tags$li(tags$a(href="mailto:mcjarami@unal.edu.co", "Mario C. Jaramillo-Elorza")),
         tags$li(tags$a(href="mailto:cmlopera@unal.edu.co", "Carlos M. Lopera-Gómez"))
-      ),
-      h4("Correspondencia:"),
-      tags$ul(
-        tags$li(tags$a(href="mailto:mcjarami@unal.edu.co", "Mario C. Jaramillo-Elorza"))
       )
     ),
     
