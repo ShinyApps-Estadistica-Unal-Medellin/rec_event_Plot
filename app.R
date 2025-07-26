@@ -104,6 +104,8 @@ server <- function(input, output, session) {
       } else {
         read.table(file_input$datapath, header = TRUE, sep = delimiter)
       }
+    }, error = function(e) {
+      NULL
     })
   }
   
