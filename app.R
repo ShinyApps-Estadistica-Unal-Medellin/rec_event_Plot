@@ -38,7 +38,7 @@ ui <- fluidPage(
       hr(),
       h4("Variables de la base de datos:"),
       uiOutput("col_id1") %>%
-        tagAppendAttributes(`data-step` = 2, `data-intro` = "Selecciona la variable que identifica a cada individuo."),
+        tagAppendAttributes(`data-step` = 2, `data-intro` = "Selecciona la variable que identifica a cada equipo o sistema."),
       uiOutput("col_time1") %>%
         tagAppendAttributes(`data-step` = 3, `data-intro` = "Selecciona la variable de tiempo a falla o censura."),
       uiOutput("col_event1") %>%
